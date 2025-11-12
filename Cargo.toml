@@ -1,0 +1,21 @@
+[package]
+name = "memflow-rawmem"
+version = "0.2.0"
+authors = ["ko1N <ko1N1337@gmail.com>"]
+edition = "2021"
+description = "Raw memory dump plugin for memflow"
+documentation = "https://docs.rs/memflow-rawmem"
+readme = "README.md"
+homepage = "https://memflow.io"
+repository = "https://github.com/memflow/memflow-rawmem"
+license = "MIT"
+keywords = ["memflow", "introspection", "memory", "dma"]
+categories = ["api-bindings", "memory-management", "os"]
+
+[lib]
+crate-type = ["lib", "cdylib"]
+
+[dependencies]
+memflow = { version = "0.2" }
+
+[features]
