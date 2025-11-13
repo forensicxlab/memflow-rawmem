@@ -1,8 +1,6 @@
 /*!
-Use the plugin inventory to load memraw and a win32 OS on top.
 Example:
-  cargo run --release --example ps_inventory -- \
-    --connector memraw::/tmp/mem.img --os win32
+  cargo run --release --example ps_inventory -- /tmp/mem.img
 */
 use log::info;
 use memflow::prelude::v1::*;

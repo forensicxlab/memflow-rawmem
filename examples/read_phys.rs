@@ -1,3 +1,8 @@
+/*!
+Example:
+  cargo run --release --example ps_inventory -- /tmp/mem.img
+*/
+
 use log::info;
 use memflow::prelude::v1::*;
 use std::env::args;
