@@ -1,7 +1,7 @@
 [package]
 name = "memflow-rawmem"
 version = "0.2.0"
-authors = ["ko1N <ko1N1337@gmail.com>"]
+authors = ["ko1N <ko1N1337@gmail.com>", "k1nd0ne <k1nd0ne@mail.com>"]
 edition = "2021"
 description = "Raw memory dump plugin for memflow"
 documentation = "https://docs.rs/memflow-rawmem"
@@ -16,6 +16,27 @@ categories = ["api-bindings", "memory-management", "os"]
 crate-type = ["lib", "cdylib"]
 
 [dependencies]
-memflow = { version = "0.2" }
+#memflow = { version = "0.2", features = ["plugins", "filemap"] }
+memflow = { path = "../memflow/memflow" }
+
+log = { version = "0.4", default-features = false }
+
+[dev-dependencies]
+env_logger = "0.11"
+memflow-win32 = { version = "0.2" }
+
+[profile.release]
+lto = true
 
 [features]
+default = ["filemap", "plugins"]
+plugins = ["memflow/plugins"]
+filemap = ["memflow/filemap"]
+
+[[example]]
+name = "read_phys"
+path = "examples/read_phys.rs"
+
+[[example]]
+name = "ps_inventory"
+path = "examples/ps_inventory.rs"
