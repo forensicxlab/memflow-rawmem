@@ -1,6 +1,6 @@
 /*!
 Example:
-  cargo run --release --example ps_inventory -- /tmp/mem.img
+  cargo run --release --example read_phys -- /tmp/mem.img
 */
 
 use log::info;

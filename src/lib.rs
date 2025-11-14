@@ -32,7 +32,7 @@ pub type MemRawRo<'a> = ReadMappedFilePhysicalMemory<'a>;
 #[cfg(not(feature = "filemap"))]
 pub type MemRawRo<'a> = FileIoMemory<CloneFile>;
 
-#[connector(name = "memraw", help_fn = "help", no_default_cache = true)]
+#[connector(name = "rawmem", help_fn = "help", no_default_cache = true)]
 pub fn create_connector<'a>(args: &ConnectorArgs) -> Result<MemRawRo<'a>> {
     let target = args.target.as_deref().ok_or_else(|| {
         Error(ErrorOrigin::Connector, ErrorKind::Unknown).log_error("`target` missing")
@@ -55,13 +55,13 @@ pub fn create_connector<'a>(args: &ConnectorArgs) -> Result<MemRawRo<'a>> {
     #[cfg(feature = "filemap")]
     {
         let conn = MmapInfo::try_with_filemap(file, map)?.into_connector(); // ReadMappedFilePhysicalMemory
-        info!("memraw: '{}' (RO mmap) base={:#x}", target, base.to_umem());
+        info!("rawmem: '{}' (RO mmap) base={:#x}", target, base.to_umem());
         Ok(conn)
     }
     #[cfg(not(feature = "filemap"))]
     {
         let conn = MemRawRo::with_mem_map(file.into(), map)?;
-        info!("memraw: '{}' (RO stdio) base={:#x}", target, base.to_umem());
+        info!("rawmem: '{}' (RO stdio) base={:#x}", target, base.to_umem());
         Ok(conn)
     }
 }
