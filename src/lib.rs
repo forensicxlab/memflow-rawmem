@@ -75,8 +75,8 @@ Args:
   base    - optional physical base (hex like 0x100000000 or decimal)
 
 Examples:
-  memraw::/path/to/mem.img
-  memraw::/path/to/mem.img:base=0x100000000
+  rawmem::/path/to/mem.img
+  rawmem::/path/to/mem.img:base=0x100000000
 "
     .to_owned()
 }

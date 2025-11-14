@@ -15,11 +15,11 @@ fn main() {
 
     let mut inventory = Inventory::scan();
     let connector = inventory
-        .instantiate_connector("memraw", None, connector_args.as_ref())
-        .expect("unable to create memraw connector");
+        .instantiate_connector("rawmem", None, connector_args.as_ref())
+        .expect("unable to create rawmem connector");
     let mut os = inventory
         .instantiate_os("win32", Some(connector), None)
-        .expect("unable to create win32 instance with memraw connector");
+        .expect("unable to create win32 instance with rawmem connector");
     let process_list = os.process_info_list().expect("unable to read process list");
 
     info!(
