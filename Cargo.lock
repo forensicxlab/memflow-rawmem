@@ -844,38 +844,6 @@ checksum = "f52b00d39961fc5b2736ea853c9cc86238e165017a493d1d5c8eac6bdc4cc273"
 [[package]]
 name = "memflow"
 version = "0.2.4"
-dependencies = [
- "abi_stable",
- "bitflags 1.3.2",
- "bumpalo",
- "cglue",
- "chrono",
- "coarsetime",
- "dataview 1.0.1",
- "dirs",
- "fixed-slice-vec",
- "goblin",
- "hashbrown 0.14.5",
- "itertools 0.12.1",
- "libloading 0.8.9",
- "log",
- "memflow-derive 0.2.4",
- "memmap",
- "no-std-compat",
- "num-traits",
- "once_cell",
- "pelite 0.9.0",
- "rangemap",
- "serde",
- "serde_json",
- "smallvec",
- "toml 0.8.23",
- "x86_64",
-]
-
-[[package]]
-name = "memflow"
-version = "0.2.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0b5a164dd29bb697a512c389215acf4899a3e671a72844acb04d1ddac6ba8d7f"
 dependencies = [
@@ -908,14 +876,36 @@ dependencies = [
 ]
 
 [[package]]
-name = "memflow-derive"
+name = "memflow"
 version = "0.2.4"
+source = "git+https://github.com/forensicxlab/memflow?branch=main#e7ec6d553924cb7be17a7815e3cbada5b7af5054"
 dependencies = [
- "darling",
- "proc-macro-crate",
- "proc-macro2",
- "quote",
- "syn 2.0.110",
+ "abi_stable",
+ "bitflags 1.3.2",
+ "bumpalo",
+ "cglue",
+ "chrono",
+ "coarsetime",
+ "dataview 1.0.1",
+ "dirs",
+ "fixed-slice-vec",
+ "goblin",
+ "hashbrown 0.14.5",
+ "itertools 0.12.1",
+ "libloading 0.8.9",
+ "log",
+ "memflow-derive 0.2.4 (git+https://github.com/forensicxlab/memflow?branch=main)",
+ "memmap",
+ "no-std-compat",
+ "num-traits",
+ "once_cell",
+ "pelite 0.9.0",
+ "rangemap",
+ "serde",
+ "serde_json",
+ "smallvec",
+ "toml 0.8.23",
+ "x86_64",
 ]
 
 [[package]]
@@ -932,12 +922,24 @@ dependencies = [
 ]
 
 [[package]]
+name = "memflow-derive"
+version = "0.2.4"
+source = "git+https://github.com/forensicxlab/memflow?branch=main#e7ec6d553924cb7be17a7815e3cbada5b7af5054"
+dependencies = [
+ "darling",
+ "proc-macro-crate",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.110",
+]
+
+[[package]]
 name = "memflow-rawmem"
 version = "0.2.0"
 dependencies = [
  "env_logger",
  "log",
- "memflow 0.2.4",
+ "memflow 0.2.4 (git+https://github.com/forensicxlab/memflow?branch=main)",
  "memflow-win32",
 ]
 

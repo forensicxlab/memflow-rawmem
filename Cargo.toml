@@ -16,8 +16,7 @@ categories = ["api-bindings", "memory-management", "os"]
 crate-type = ["lib", "cdylib"]
 
 [dependencies]
-#memflow = { version = "0.2", features = ["plugins", "filemap"] }
-memflow = { path = "../memflow/memflow" }
+memflow = { git = "https://github.com/forensicxlab/memflow", branch = "main", features = ["plugins", "filemap"] }
 
 log = { version = "0.4", default-features = false }
 
